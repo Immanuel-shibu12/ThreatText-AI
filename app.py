@@ -204,6 +204,12 @@ class ThreatTextHTTPHandler(BaseHTTPRequestHandler):
             file_rel = path[4:]
             self._serve_file(os.path.join(WEB_DIR, "js", file_rel), "application/javascript")
             return
+        elif path.startswith("/assets/"):
+            file_rel = path[8:]
+            target = os.path.join(WEB_DIR, "assets", file_rel)
+            mime, _ = mimetypes.guess_type(target)
+            self._serve_file(target, mime or "image/jpeg")
+            return
         elif path.startswith("/results/"):
             file_rel = path[9:]
             target = os.path.join(RESULTS_DIR, file_rel)

@@ -14,9 +14,14 @@
 <body>
 
     <!-- Header -->
+        <!-- Header -->
     <header class="navbar">
-        <div class="brand-wrapper">
-            <div class="brand-icon">🛡️</div>
+        <div class="brand-wrapper" title="Click to return to Welcome screen">
+            <div class="brand-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+            </div>
             <div>
                 <h1 class="brand-title">ThreatText AI</h1>
                 <p class="brand-subtitle">Explainable NLP Phishing Scanner & Review</p>
@@ -25,8 +30,9 @@
 
         <nav>
             <div class="scan-mode-toggle">
-                <button class="mode-btn active" id="btn-mode-single" data-mode="single">✉️ Email Scanner</button>
-                <button class="mode-btn" id="btn-mode-batch" data-mode="batch">📁 Batch CSV Scanner</button>
+                <button class="mode-btn active" id="btn-mode-welcome" data-mode="welcome">Welcome</button>
+                <button class="mode-btn" id="btn-mode-single" data-mode="single">Email Scanner</button>
+                <button class="mode-btn" id="btn-mode-batch" data-mode="batch">Batch Scanner</button>
             </div>
         </nav>
 
@@ -41,11 +47,226 @@
         <!-- ============================================================
              MODE 1: SINGLE EMAIL SCANNER & REVIEW
              ============================================================ -->
-        <section id="section-single" class="scanner-section active">
+                <!-- ============================================================
+             MODE 0: ROBO SAYS HI — WELCOME PAGE
+             ============================================================ -->
+                <!-- ============================================================
+             MODE 0: ROBO SAYS HI — CLEAN WELCOME
+             ============================================================ -->
+        <section id="section-welcome" class="welcome-section active">
+            <div class="welcome-hero-stage">
+                
+                <!-- 3D Holographic Pedestal & Robot Figure -->
+                <div class="robot-showcase-container">
+                    <div class="robot-holopad">
+                        <div class="holo-ring holo-ring-outer"></div>
+                        <div class="holo-ring holo-ring-inner"></div>
+                        <div class="holo-base-glow"></div>
+                        
+                        <div id="robot-figure" class="robot-figure-wrap" title="Click or move cursor over Robo to interact!">
+                            <!-- Animated Vector Robot Character -->
+                            <div class="animated-robot-stage" id="animated-robot-stage">
+                                <svg class="animated-robot-svg" viewBox="0 0 340 380" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#ffffff"/>
+                                            <stop offset="60%" stop-color="#e2e8f0"/>
+                                            <stop offset="100%" stop-color="#94a3b8"/>
+                                        </linearGradient>
+                                        <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#38bdf8"/>
+                                            <stop offset="100%" stop-color="#0284c7"/>
+                                        </linearGradient>
+                                        <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#c084fc"/>
+                                            <stop offset="100%" stop-color="#818cf8"/>
+                                        </linearGradient>
+                                        <linearGradient id="visorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#0a0f1d"/>
+                                            <stop offset="70%" stop-color="#020617"/>
+                                            <stop offset="100%" stop-color="#070d1e"/>
+                                        </linearGradient>
+                                        <linearGradient id="plasmaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.95"/>
+                                            <stop offset="50%" stop-color="#818cf8" stop-opacity="0.6"/>
+                                            <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+                                        </linearGradient>
+                                        <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+                                            <feGaussianBlur stdDeviation="4" result="blur" />
+                                            <feMerge>
+                                                <feMergeNode in="blur" />
+                                                <feMergeNode in="SourceGraphic" />
+                                            </feMerge>
+                                        </filter>
+                                    </defs>
+
+                                    <!-- Plasma Thruster Jet Exhaust -->
+                                    <g class="thruster-exhaust-group">
+                                        <ellipse cx="138" cy="336" rx="15" ry="26" fill="url(#plasmaGrad)" class="plasma-flame flame-left"/>
+                                        <ellipse cx="186" cy="336" rx="15" ry="26" fill="url(#plasmaGrad)" class="plasma-flame flame-right"/>
+                                        <ellipse cx="162" cy="348" rx="36" ry="7" fill="none" stroke="#38bdf8" stroke-width="2" class="plasma-ring ring-1" opacity="0.6"/>
+                                        <ellipse cx="162" cy="362" rx="48" ry="9" fill="none" stroke="#818cf8" stroke-width="1.5" class="plasma-ring ring-2" opacity="0.4"/>
+                                    </g>
+
+                                    <!-- Main Floating Robot Structure -->
+                                    <g id="robot-whole-body" class="robot-interactive-body">
+                                        <!-- Left Arm -->
+                                        <g id="robot-left-arm" class="robot-arm-left">
+                                            <circle cx="85" cy="210" r="14" fill="url(#bodyGrad)" stroke="#38bdf8" stroke-width="2"/>
+                                            <circle cx="85" cy="210" r="6" fill="#38bdf8" filter="url(#cyanGlow)"/>
+                                            <path d="M 80,218 Q 65,245 70,270" stroke="url(#cyanGrad)" stroke-width="14" stroke-linecap="round" fill="none"/>
+                                            <circle cx="70" cy="275" r="12" fill="url(#bodyGrad)" stroke="#38bdf8" stroke-width="2"/>
+                                            <path d="M 64,285 C 64,295 76,295 76,285" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+                                        </g>
+
+                                        <!-- Torso -->
+                                        <g id="robot-torso">
+                                            <!-- ALIT Chest Plate ID -->
+                                            <g id="alit-chest-id">
+                                                <rect x="136" y="246" width="52" height="15" rx="4" fill="#030712" stroke="#38bdf8" stroke-width="1.2"/>
+                                                <text x="162" y="257.5" fill="#38bdf8" font-family="'Space Grotesk', system-ui, monospace" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1.5">ALIT</text>
+                                            </g>
+                                            <ellipse cx="162" cy="245" rx="66" ry="74" fill="url(#bodyGrad)" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+                                            <path d="M 102,240 Q 162,260 222,240 Q 218,258 162,275 Q 106,258 102,240 Z" fill="url(#cyanGrad)"/>
+                                            <path d="M 120,205 Q 162,220 204,205" fill="none" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3"/>
+                                            <circle cx="162" cy="235" r="24" fill="#0f172a" stroke="#38bdf8" stroke-width="3" filter="url(#cyanGlow)"/>
+                                            <circle cx="162" cy="235" r="18" fill="none" stroke="#818cf8" stroke-width="2" stroke-dasharray="6,4" class="reactor-spinner"/>
+                                            <circle cx="162" cy="235" r="9" fill="#38bdf8" class="reactor-core-glow" filter="url(#cyanGlow)"/>
+                                            <rect x="135" y="278" width="54" height="12" rx="4" fill="#090d16" stroke="rgba(56,189,248,0.4)" stroke-width="1"/>
+                                            <text x="162" y="287" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#38bdf8" letter-spacing="0.5">THREAT-BOT</text>
+                                            <path d="M 126,305 L 132,324 L 148,324 L 142,305 Z" fill="#334155" stroke="#38bdf8" stroke-width="1.5"/>
+                                            <path d="M 174,305 L 168,324 L 184,324 L 190,305 Z" fill="#334155" stroke="#38bdf8" stroke-width="1.5"/>
+                                        </g>
+
+                                        <!-- Right Arm (Active Wave Animation) -->
+                                        <g id="robot-waving-arm" class="robot-arm-right-waving">
+                                            <circle cx="238" cy="205" r="14" fill="url(#bodyGrad)" stroke="#38bdf8" stroke-width="2"/>
+                                            <circle cx="238" cy="205" r="6" fill="#38bdf8" filter="url(#cyanGlow)"/>
+                                            <path d="M 238,200 Q 258,172 268,142" stroke="url(#cyanGrad)" stroke-width="15" stroke-linecap="round" fill="none"/>
+                                            <circle cx="268" cy="140" r="10" fill="url(#bodyGrad)" stroke="#38bdf8" stroke-width="2"/>
+                                            <g class="robot-hand-waving-forearm">
+                                                <path d="M 268,140 L 282,106" stroke="url(#bodyGrad)" stroke-width="12" stroke-linecap="round"/>
+                                                <ellipse cx="285" cy="96" rx="13" ry="12" fill="url(#bodyGrad)" stroke="#38bdf8" stroke-width="2"/>
+                                                <rect x="275" y="76" width="4.5" height="15" rx="2" fill="url(#cyanGrad)"/>
+                                                <rect x="281.5" y="72" width="4.5" height="18" rx="2" fill="url(#cyanGrad)"/>
+                                                <rect x="288" y="74" width="4.5" height="16" rx="2" fill="url(#cyanGrad)"/>
+                                                <rect x="294.5" y="79" width="4" height="13" rx="2" fill="url(#cyanGrad)"/>
+                                                <circle cx="285" cy="96" r="4" fill="#38bdf8" filter="url(#cyanGlow)"/>
+
+                                                <!-- ALIT Name Badge That Waves with Hand -->
+                                                <g class="waving-alit-badge" id="waving-alit-badge" transform="translate(244, 42)">
+                                                    <rect x="0" y="0" width="58" height="24" rx="12" fill="#030712" stroke="#38bdf8" stroke-width="1.8" filter="url(#cyanGlow)"/>
+                                                    <circle cx="12" cy="12" r="3" fill="#34d399" filter="url(#cyanGlow)"/>
+                                                    <text x="33" y="16" fill="#38bdf8" font-family="'Space Grotesk', system-ui, sans-serif" font-size="11" font-weight="800" text-anchor="middle" letter-spacing="1.5">ALIT</text>
+                                                </g>
+                                            </g>
+                                        </g>
+
+                                        <!-- Head (Tilt & Eye Tracking) -->
+                                        <g id="robot-head-group" class="robot-head-tilt">
+                                            <line x1="122" y1="62" x2="105" y2="28" stroke="#94a3b8" stroke-width="3.5" stroke-linecap="round"/>
+                                            <circle cx="105" cy="28" r="7" fill="#38bdf8" class="antenna-beacon" filter="url(#cyanGlow)"/>
+                                            <line x1="202" y1="62" x2="219" y2="28" stroke="#94a3b8" stroke-width="3.5" stroke-linecap="round"/>
+                                            <circle cx="219" cy="28" r="7" fill="#38bdf8" class="antenna-beacon" filter="url(#cyanGlow)"/>
+                                            <rect x="76" y="94" width="16" height="42" rx="8" fill="url(#cyanGrad)" stroke="#0f172a" stroke-width="2"/>
+                                            <rect x="80" y="102" width="8" height="26" rx="4" fill="#38bdf8" opacity="0.8" filter="url(#cyanGlow)"/>
+                                            <rect x="232" y="94" width="16" height="42" rx="8" fill="url(#cyanGrad)" stroke="#0f172a" stroke-width="2"/>
+                                            <rect x="236" y="102" width="8" height="26" rx="4" fill="#38bdf8" opacity="0.8" filter="url(#cyanGlow)"/>
+                                            <ellipse cx="162" cy="116" rx="74" ry="66" fill="url(#bodyGrad)" stroke="rgba(255,255,255,0.6)" stroke-width="2.5"/>
+                                            <path d="M 115,75 Q 162,56 209,75" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.8"/>
+                                            <rect x="100" y="78" width="124" height="78" rx="36" fill="#030712" stroke="#38bdf8" stroke-width="3" filter="url(#cyanGlow)"/>
+                                            <rect x="104" y="82" width="116" height="70" rx="32" fill="url(#visorGrad)"/>
+                                            <path d="M 110,88 Q 162,80 214,88 Q 200,102 162,96 Q 124,102 110,88 Z" fill="#ffffff" opacity="0.22"/>
+
+                                            <!-- Digital LED Eyes & Smile -->
+                                            <g id="robot-digital-face" class="robot-face-expressions">
+                                                <g id="eye-left-group" class="robot-eye eye-left">
+                                                    <path class="eye-arch" d="M 124,118 Q 138,100 152,118" fill="none" stroke="#38bdf8" stroke-width="7" stroke-linecap="round" filter="url(#cyanGlow)"/>
+                                                    <circle cx="138" cy="107" r="2.5" fill="#ffffff"/>
+                                                </g>
+                                                <g id="eye-right-group" class="robot-eye eye-right">
+                                                    <path class="eye-arch" d="M 172,118 Q 186,100 200,118" fill="none" stroke="#38bdf8" stroke-width="7" stroke-linecap="round" filter="url(#cyanGlow)"/>
+                                                    <circle cx="186" cy="107" r="2.5" fill="#ffffff"/>
+                                                </g>
+                                                <g id="robot-mouth-group" class="robot-mouth-talking">
+                                                    <path id="robot-mouth-path" d="M 142,136 Q 162,154 182,136" fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round" filter="url(#cyanGlow)"/>
+                                                </g>
+                                                <ellipse cx="114" cy="130" rx="6" ry="3.5" fill="#c084fc" opacity="0.6" filter="url(#cyanGlow)"/>
+                                                <ellipse cx="210" cy="130" rx="6" ry="3.5" fill="#c084fc" opacity="0.6" filter="url(#cyanGlow)"/>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <!-- 3D Render Image Mode -->
+                            <div class="render-robot-stage" id="render-robot-stage" style="display:none;">
+                                <img src="/assets/robot.jpg" alt="CYLO-7 Friendly 3D Robot Mascot" class="robot-img" id="robot-mascot-image">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="robot-actions-panel">
+                        <div class="robot-mode-toggle-pill">
+                            <button class="mode-tab active" id="btn-mode-animated">Animated</button>
+                            <button class="mode-tab" id="btn-mode-render">3D Render</button>
+                        </div>
+                        <div class="robot-animation-triggers">
+                            <button class="anim-btn" id="btn-trigger-wave">Wave</button>
+                            <button class="anim-btn" id="btn-trigger-wink">Wink</button>
+                            <button class="anim-btn" id="btn-trigger-jump">Boost</button>
+                        </div>
+                    </div>
+
+                    <div class="robot-interactive-hint">
+                        <span>ALIT waves automatically &bull; Hover or click to wave</span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Clean Minimal Welcome -->
+                <div class="welcome-content-col">
+                    <article class="robo-speech-bubble" id="robo-speech-card">
+                        <div class="speech-header">
+                            <div class="speech-speaker">
+                                <span>ALIT</span>
+                                <div class="speaker-signal-wave">
+                                    <div class="signal-bar"></div>
+                                    <div class="signal-bar"></div>
+                                    <div class="signal-bar"></div>
+                                </div>
+                            </div>
+                            <div class="speech-mood-badge" id="robo-mood-pill">ONLINE</div>
+                        </div>
+
+                        <div class="speech-text-wrap">
+                            <h2 class="speech-title" id="speech-headline">Welcome</h2>
+                            <p class="speech-message" id="speech-body-text">
+                                Phishing detection &amp; explainable email security review.
+                                <span class="speech-typing-cursor"></span>
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- ENTER DASHBOARD BUTTON (NO EMOJIS, CLEAN) -->
+                    <div class="launch-dashboard-wrap">
+                        <button id="btn-enter-threattext-dash" class="btn-launch-dashboard" aria-label="Enter ThreatText AI Website">
+                            <span>Enter Website</span>
+                            <svg class="btn-icon-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+<section id="section-single" class="scanner-section" style="display: none;">
             
             <!-- Quick Demo Benchmarks -->
             <div class="quick-presets-bar">
-                <span class="presets-label">⚡ 1-Click Test Scenarios:</span>
+                <span class="presets-label">1-Click Test Scenarios:</span>
                 <div class="presets-container" id="presets-container">
                     <!-- Populated dynamically by JS -->
                 </div>
@@ -62,7 +283,7 @@
                     <div class="body-label-row">
                         <label class="form-label" for="email-body">Email Body / Message Text</label>
                         <label class="file-upload-label" for="email-file-input">
-                            📎 Upload .eml / .txt file
+                            Upload .eml / .txt file
                             <input type="file" id="email-file-input" accept=".eml,.txt" style="display: none;">
                         </label>
                     </div>
@@ -71,10 +292,10 @@
 
                 <div class="action-buttons-row">
                     <button class="btn btn-primary btn-lg" id="btn-analyze">
-                        <span>🔍 Scan Email & Generate Review</span>
+                        <span>Scan Email & Generate Review</span>
                     </button>
                     <button class="btn btn-secondary" id="btn-clear">
-                        <span>🧹 Clear</span>
+                        <span>Clear</span>
                     </button>
                 </div>
             </div>
@@ -103,7 +324,7 @@
                 <!-- Explainable Review Cards -->
                 <div class="card review-card">
                     <div class="card-header">
-                        <h3 class="card-title">💡 Explainable AI Review: Highlighted Threat Words</h3>
+                        <h3 class="card-title">Explainable AI Review: Highlighted Threat Words</h3>
                         <div class="xai-legend">
                             <span class="legend-item"><span class="legend-color phish"></span> Red = Phishing Trigger</span>
                             <span class="legend-item"><span class="legend-color legit"></span> Green = Safe Anchor</span>
@@ -118,13 +339,13 @@
                     <!-- Influential Words Breakdown -->
                     <div class="tokens-grid">
                         <div class="token-column">
-                            <h4 class="token-col-title phish">⚠️ Phishing Red Flags Detected (+Weight)</h4>
+                            <h4 class="token-col-title phish">Phishing Red Flags Detected (+Weight)</h4>
                             <div class="token-list" id="top-phishing-tokens">
                                 <!-- Populated by JS -->
                             </div>
                         </div>
                         <div class="token-column">
-                            <h4 class="token-col-title legit">🛡️ Legitimate Words (-Weight)</h4>
+                            <h4 class="token-col-title legit">Legitimate Words (-Weight)</h4>
                             <div class="token-list" id="top-legitimate-tokens">
                                 <!-- Populated by JS -->
                             </div>
@@ -135,7 +356,7 @@
                 <!-- Actionable Recommendations & Warning -->
                 <div class="card advice-card">
                     <div class="card-header">
-                        <h3 class="card-title">🛡️ Security Advice & Recommended Actions</h3>
+                        <h3 class="card-title">Security Advice & Recommended Actions</h3>
                     </div>
                     <ul id="recommendations-list" class="recs-list">
                         <!-- Populated by JS -->
@@ -160,13 +381,13 @@
                         <p class="section-desc">Upload a CSV file containing multiple emails to screen them in bulk and export predictions.</p>
                     </div>
                     <button class="btn btn-secondary btn-sm" id="btn-load-sample-batch">
-                        <span>📋 Load Sample Batch (10 Emails)</span>
+                        <span>Load Sample Batch (10 Emails)</span>
                     </button>
                 </div>
 
                 <!-- Dropzone -->
                 <div class="drop-zone" id="batch-drop-zone">
-                    <div class="drop-icon">📊</div>
+                    <div class="drop-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
                     <div class="drop-main-text">Drag & drop your <code>.csv</code> file here</div>
                     <div class="drop-sub-text">or click to browse local files</div>
                     <input type="file" id="batch-file-input" accept=".csv" style="display: none;">
@@ -179,7 +400,7 @@
 
                 <div style="display: flex; justify-content: flex-end; margin-top: 1rem;">
                     <button class="btn btn-primary btn-lg" id="btn-run-batch">
-                        <span>🚀 Run Bulk Batch Review</span>
+                        <span>Run Bulk Batch Review</span>
                     </button>
                 </div>
             </div>
@@ -190,28 +411,28 @@
                 <!-- KPI mini stats -->
                 <div class="card-grid-4">
                     <div class="stat-card">
-                        <div class="stat-icon blue">🔢</div>
+                        <div class="stat-icon blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg></div>
                         <div>
                             <div class="stat-label">Total Analyzed</div>
                             <div class="stat-value" id="batch-stat-total">0</div>
                         </div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon amber">⚠️</div>
+                        <div class="stat-icon amber"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
                         <div>
                             <div class="stat-label">Phishing Flagged</div>
                             <div class="stat-value" id="batch-stat-phish">0 (0%)</div>
                         </div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon green">🛡️</div>
+                        <div class="stat-icon green"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
                         <div>
                             <div class="stat-label">Legitimate Clean</div>
                             <div class="stat-value" id="batch-stat-legit">0</div>
                         </div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon purple">📑</div>
+                        <div class="stat-icon purple"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
                         <div>
                             <div class="stat-label">Text Column</div>
                             <div class="stat-value text-column-name" id="batch-text-col">text</div>
@@ -222,9 +443,9 @@
                 <!-- Batch Table -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">📋 Batch Email Predictions</h3>
+                        <h3 class="card-title">Batch Email Predictions</h3>
                         <button class="btn btn-primary btn-sm" id="btn-download-batch-csv">
-                            <span>⬇️ Download Enriched CSV</span>
+                            <span>Download Enriched CSV</span>
                         </button>
                     </div>
 

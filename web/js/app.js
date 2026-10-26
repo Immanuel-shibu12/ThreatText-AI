@@ -1,12 +1,14 @@
-﻿/**
- * ThreatText AI - Streamlined Client-Side Controller
- * Focused exclusively on:
- * 1. Single email threat scanning with Explainable AI (XAI) review
- * 2. Bulk CSV batch screening and export
+/**
+ * ThreatText AI - Client-Side Controller
+ * 1. Animated Vector Robot Welcome Page
+ * 2. 1-Click Benchmark Test Scenarios
+ * 3. Single Email Threat Scanning & Explainable AI (XAI)
+ * 4. Bulk CSV Batch Screening & CSV Export
  */
 
 document.addEventListener("DOMContentLoaded", () => {
     initModeToggle();
+    initWelcomeRobo();
     initPresets();
     initSingleEmailAnalyzer();
     initBatchAnalysis();
@@ -14,33 +16,143 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // =============================================================================
-// 1. Mode Switcher (Single Email Scanner vs Batch CSV Scanner)
+// 1. Mode Switcher (Welcome -> Single Email Scanner -> Batch CSV Scanner)
 // =============================================================================
 function initModeToggle() {
+    const btnWelcome = document.getElementById("btn-mode-welcome");
     const btnSingle = document.getElementById("btn-mode-single");
     const btnBatch = document.getElementById("btn-mode-batch");
+    const sectionWelcome = document.getElementById("section-welcome");
     const sectionSingle = document.getElementById("section-single");
     const sectionBatch = document.getElementById("section-batch");
+    const btnEnterDash = document.getElementById("btn-enter-threattext-dash");
+    const brandLogo = document.querySelector(".brand-wrapper");
 
-    if (btnSingle && btnBatch) {
-        btnSingle.addEventListener("click", () => {
-            btnSingle.classList.add("active");
-            btnBatch.classList.remove("active");
-            sectionSingle.style.display = "block";
-            sectionBatch.style.display = "none";
+    function showMode(mode) {
+        if (btnWelcome) btnWelcome.classList.toggle("active", mode === "welcome");
+        if (btnSingle) btnSingle.classList.toggle("active", mode === "single");
+        if (btnBatch) btnBatch.classList.toggle("active", mode === "batch");
+
+        if (sectionWelcome) sectionWelcome.style.display = (mode === "welcome" ? "block" : "none");
+        if (sectionSingle) sectionSingle.style.display = (mode === "single" ? "block" : "none");
+        if (sectionBatch) sectionBatch.style.display = (mode === "batch" ? "block" : "none");
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    if (btnWelcome) {
+        btnWelcome.addEventListener("click", () => showMode("welcome"));
+    }
+    if (btnSingle) {
+        btnSingle.addEventListener("click", () => showMode("single"));
+    }
+    if (btnBatch) {
+        btnBatch.addEventListener("click", () => showMode("batch"));
+    }
+    if (btnEnterDash) {
+        btnEnterDash.addEventListener("click", () => {
+            showMode("single");
         });
+    }
+    if (brandLogo) {
+        brandLogo.style.cursor = "pointer";
+        brandLogo.addEventListener("click", () => showMode("welcome"));
+    }
 
-        btnBatch.addEventListener("click", () => {
-            btnBatch.classList.add("active");
-            btnSingle.classList.remove("active");
-            sectionBatch.style.display = "block";
-            sectionSingle.style.display = "none";
+    // Direct entry via URL hash (e.g. #scanner, #dashboard, or #website enters directly)
+    if (window.location.hash === "#scanner" || window.location.hash === "#dashboard" || window.location.hash === "#website") {
+        showMode("single");
+    } else if (window.location.hash === "#batch") {
+        showMode("batch");
+    }
+}
+
+// =============================================================================
+// 2. Welcome Robot Controller
+// =============================================================================
+function initWelcomeRobo() {
+    const btnAnimated = document.getElementById("btn-mode-animated");
+    const btnRender = document.getElementById("btn-mode-render");
+    const stageAnimated = document.getElementById("animated-robot-stage");
+    const stageRender = document.getElementById("render-robot-stage");
+
+    if (btnAnimated && btnRender) {
+        btnAnimated.addEventListener("click", () => {
+            btnAnimated.classList.add("active");
+            btnRender.classList.remove("active");
+            if (stageAnimated) stageAnimated.style.display = "block";
+            if (stageRender) stageRender.style.display = "none";
+        });
+        btnRender.addEventListener("click", () => {
+            btnRender.classList.add("active");
+            btnAnimated.classList.remove("active");
+            if (stageAnimated) stageAnimated.style.display = "none";
+            if (stageRender) stageRender.style.display = "block";
+        });
+    }
+
+    const btnWave = document.getElementById("btn-trigger-wave");
+    const btnWink = document.getElementById("btn-trigger-wink");
+    const btnJump = document.getElementById("btn-trigger-jump");
+    const wavingArm = document.getElementById("robot-waving-arm");
+    const eyeLeft = document.getElementById("eye-left-group");
+    const roboStage = document.getElementById("animated-robot-stage");
+    const robotFigure = document.getElementById("robot-figure");
+    const speechHeadline = document.getElementById("speech-headline");
+    const speechBody = document.getElementById("speech-body-text");
+
+    function triggerAlitWave() {
+        if (wavingArm) {
+            wavingArm.classList.add("waving-active");
+            wavingArm.style.animation = "none";
+            void wavingArm.offsetWidth;
+            wavingArm.style.animation = "waveArmGestureFast 0.7s ease-in-out 4";
+        }
+        if (speechHeadline) {
+            speechHeadline.textContent = "ALIT says Hi!";
+        }
+        setTimeout(() => {
+            if (wavingArm) {
+                wavingArm.classList.remove("waving-active");
+                wavingArm.style.animation = "";
+            }
+            if (speechHeadline) {
+                speechHeadline.textContent = "Welcome";
+            }
+        }, 2800);
+    }
+
+    if (btnWave) {
+        btnWave.addEventListener("click", triggerAlitWave);
+    }
+
+    if (robotFigure) {
+        robotFigure.addEventListener("click", triggerAlitWave);
+    }
+
+    if (btnWink && eyeLeft) {
+        btnWink.addEventListener("click", () => {
+            eyeLeft.style.transform = "scaleY(0.1)";
+            eyeLeft.style.transition = "transform 0.15s ease";
+            setTimeout(() => {
+                eyeLeft.style.transform = "scaleY(1)";
+            }, 350);
+        });
+    }
+
+    if (btnJump && roboStage) {
+        btnJump.addEventListener("click", () => {
+            roboStage.style.transform = "translateY(-24px)";
+            roboStage.style.transition = "transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)";
+            setTimeout(() => {
+                roboStage.style.transform = "translateY(0)";
+            }, 400);
         });
     }
 }
 
 // =============================================================================
-// 2. Telemetry Status
+// 3. Telemetry Status
 // =============================================================================
 async function fetchSystemStatus() {
     try {
@@ -58,20 +170,70 @@ async function fetchSystemStatus() {
 }
 
 // =============================================================================
-// 3. 1-Click Demo Scenarios
+// 4. 1-Click Benchmark Test Scenarios
 // =============================================================================
-let DEMO_PRESETS = [];
-
-async function initPresets() {
-    try {
-        const res = await fetch("/api/samples");
-        if (res.ok) {
-            DEMO_PRESETS = await res.json();
-            renderPresetChips();
-        }
-    } catch (e) {
-        console.warn("Could not load presets:", e);
+const DEFAULT_PRESETS = [
+    {
+        "id": "bank_verification",
+        "title": "Bank Account Urgent Suspension",
+        "type": "Phishing",
+        "subject": "URGENT: Temporary Suspension on Online Banking Access",
+        "sender": "Chase Security Alerts <service-notice@chase-secure-verify.net>",
+        "body": "Dear Valued Customer,\n\nWe have detected multiple unauthorized login attempts to your online banking portal from an unrecognized IP address (194.26.29.112).\n\nFor your security, access to your funds and bill payment features has been temporarily suspended.\n\nTo restore your access immediately and avoid permanent account lock within 24 hours, you must verify your identity and confirm your account password using our secure verification server:\n\nhttp://chase-identity-auth-portal.com/login?verify=true&session=89327498234\n\nFailure to verify within 24 hours will result in permanent suspension and a $50 administrative fee."
+    },
+    {
+        "id": "college_timetable",
+        "title": "College Class Schedule & Timetable",
+        "type": "Legitimate",
+        "subject": "Updated Lecture Timetable for Fall Semester - CS Dept",
+        "sender": "Dr. Sarah Jenkins <sjenkins@university.edu>",
+        "body": "Dear Computer Science Students,\n\nPlease find attached the revised lecture timetable for the upcoming Fall semester. Due to classroom renovations in Hall B, Natural Language Processing (CS 460) will now be held in Room 304.\n\nOffice hours schedule:\n- Tuesday: 2:00 PM - 4:00 PM\n- Thursday: 10:00 AM - 12:00 PM\n\nPlease review the syllabus on the campus portal and let me know if you have timetable conflicts.\n\nBest regards,\nDr. Sarah Jenkins\nDepartment of Computer Science & Engineering"
+    },
+    {
+        "id": "delivery_credentials",
+        "title": "Delivery Notification & Parcel Update",
+        "type": "Phishing",
+        "subject": "Notice: Incomplete Delivery Address for Parcel #DHL-984210",
+        "sender": "DHL Express Notification <tracking-update@dhl-parcel-redelivery.org>",
+        "body": "Important Notice from DHL Courier Services:\n\nYour incoming international package (#DHL-984210-US) could not be delivered on scheduled date because the recipient address format is incomplete.\n\nA small customs processing charge of $2.99 is required to reschedule redelivery to your door.\n\nClick here to confirm your street address and pay fee securely:\nhttp://192.168.1.88/dhl-package-update/verify\n\nIf unpaid within 48 hours, package will be returned to sender overseas."
+    },
+    {
+        "id": "hr_payroll_update",
+        "title": "HR Payroll Direct Deposit Update",
+        "type": "Phishing",
+        "subject": "Action Required: Update Your Direct Deposit Bank Account Details",
+        "sender": "Corporate HR Portal <hr-support@internal-benefits-update.cc>",
+        "body": "Hello Employee,\n\nDuring routine quarterly auditing, we noticed your direct deposit bank routing number requires re-validation for the upcoming salary disbursement cycle.\n\nPlease confirm your banking password and account details immediately on the employee portal:\nhttp://portal-login-benefits.com/auth\n\nFailure to update by 5:00 PM will cause your payroll disbursement to be deferred."
+    },
+    {
+        "id": "workplace_meeting",
+        "title": "Workplace Project Review & Agenda",
+        "type": "Legitimate",
+        "subject": "Agenda: ThreatText AI Architecture Review - Tomorrow 10:00 AM",
+        "sender": "Alex Rivera <alex.rivera@enterprise.com>",
+        "body": "Hi Team,\n\nHere is the finalized agenda for our architecture review tomorrow:\n\n1. Overview of 17,512 email benchmark dataset and sanitation metrics\n2. TF-IDF unigram and bigram feature representations\n3. Evaluation of Logistic Regression, Linear SVM, and Naive Bayes on held-out test split\n4. Review of XAI signed feature attribution engine\n5. Q&A and next sprint timeline\n\nThe slide deck is uploaded to the internal drive. See you all tomorrow!\n\nAlex"
     }
+];
+
+let DEMO_PRESETS = DEFAULT_PRESETS;
+
+function initPresets() {
+    renderPresetChips();
+
+    fetch("/api/samples")
+        .then(res => {
+            if (res.ok) return res.json();
+            throw new Error("HTTP error " + res.status);
+        })
+        .then(data => {
+            if (Array.isArray(data) && data.length > 0) {
+                DEMO_PRESETS = data;
+                renderPresetChips();
+            }
+        })
+        .catch(err => {
+            console.log("Using default demo scenarios.");
+        });
 }
 
 function renderPresetChips() {
@@ -82,17 +244,14 @@ function renderPresetChips() {
     DEMO_PRESETS.forEach(preset => {
         const chip = document.createElement("button");
         chip.className = "preset-chip";
-        // Clean scenario title without spoiler badges (No Legitimate / Phishing badges)
-        chip.innerHTML = `<span>⚡ ${preset.title}</span>`;
-        chip.title = `Click to load and automatically analyze: ${preset.title}`;
+        chip.innerHTML = `<span class="chip-indicator"></span><span>${escapeHtml(preset.title)}</span>`;
+        chip.title = `Click to load: ${preset.title}`;
         chip.addEventListener("click", () => {
-            // Highlight active scenario chip
             document.querySelectorAll(".preset-chip").forEach(c => c.classList.remove("active"));
             chip.classList.add("active");
 
             document.getElementById("email-subject").value = preset.subject || "";
             document.getElementById("email-body").value = preset.body || "";
-            // Automatically analyze and display output immediately
             analyzeEmail();
         });
         container.appendChild(chip);
@@ -100,7 +259,7 @@ function renderPresetChips() {
 }
 
 // =============================================================================
-// 4. Single Email Analyzer & Explainable Review
+// 5. Single Email Analyzer & Explainable Review
 // =============================================================================
 function initSingleEmailAnalyzer() {
     const btnAnalyze = document.getElementById("btn-analyze");
@@ -117,6 +276,7 @@ function initSingleEmailAnalyzer() {
             document.getElementById("email-body").value = "";
             const resultBox = document.getElementById("analysis-result-container");
             if (resultBox) resultBox.style.display = "none";
+            document.querySelectorAll(".preset-chip").forEach(c => c.classList.remove("active"));
         });
     }
 
@@ -136,7 +296,7 @@ async function handleEmailFileUpload(file) {
     const btnAnalyze = document.getElementById("btn-analyze");
     if (btnAnalyze) {
         btnAnalyze.disabled = true;
-        btnAnalyze.innerHTML = `<span>â³ Reading ${file.name}...</span>`;
+        btnAnalyze.innerHTML = `<span>Reading ${escapeHtml(file.name)}...</span>`;
     }
 
     try {
@@ -159,7 +319,7 @@ async function handleEmailFileUpload(file) {
     } finally {
         if (btnAnalyze) {
             btnAnalyze.disabled = false;
-            btnAnalyze.innerHTML = `<span>ðŸ” Scan Email & Generate Review</span>`;
+            btnAnalyze.innerHTML = `<span>Scan Email & Generate Review</span>`;
         }
     }
 }
@@ -178,7 +338,7 @@ async function analyzeEmail() {
     const btnAnalyze = document.getElementById("btn-analyze");
     if (btnAnalyze) {
         btnAnalyze.disabled = true;
-        btnAnalyze.innerHTML = `<span>â³ Evaluating Email via NLP Pipeline...</span>`;
+        btnAnalyze.innerHTML = `<span>Evaluating Email via NLP Pipeline...</span>`;
     }
 
     try {
@@ -204,7 +364,7 @@ async function analyzeEmail() {
     } finally {
         if (btnAnalyze) {
             btnAnalyze.disabled = false;
-            btnAnalyze.innerHTML = `<span>ðŸ” Scan Email & Generate Review</span>`;
+            btnAnalyze.innerHTML = `<span>Scan Email & Generate Review</span>`;
         }
     }
 }
@@ -214,7 +374,6 @@ function renderAnalysisResult(data) {
     if (!container) return;
     container.style.display = "block";
 
-    // Smooth scroll down to review
     container.scrollIntoView({ behavior: "smooth", block: "start" });
 
     // Verdict Banner
@@ -265,7 +424,7 @@ function renderAnalysisResult(data) {
                 const row = document.createElement("div");
                 row.className = "token-row";
                 row.innerHTML = `
-                    <span class="token-phrase" style="color: #fca5a5;">âš ï¸ ${escapeHtml(item.phrase)}</span>
+                    <span class="token-phrase" style="color: #fca5a5;">${escapeHtml(item.phrase)}</span>
                     <span class="token-score positive">+${item.influence}</span>
                 `;
                 phishContainer.appendChild(row);
@@ -285,7 +444,7 @@ function renderAnalysisResult(data) {
                 const row = document.createElement("div");
                 row.className = "token-row";
                 row.innerHTML = `
-                    <span class="token-phrase" style="color: #86efac;">ðŸ›¡ï¸ ${escapeHtml(item.phrase)}</span>
+                    <span class="token-phrase" style="color: #86efac;">${escapeHtml(item.phrase)}</span>
                     <span class="token-score negative">-${item.influence}</span>
                 `;
                 legitContainer.appendChild(row);
@@ -313,7 +472,7 @@ function renderAnalysisResult(data) {
 }
 
 // =============================================================================
-// 5. Batch CSV Screening
+// 6. Batch CSV Screening
 // =============================================================================
 let currentBatchEnrichedCsv = null;
 
@@ -409,7 +568,7 @@ async function runBatchAnalysis(csvContent) {
 
     if (btnRunBatch) {
         btnRunBatch.disabled = true;
-        btnRunBatch.innerHTML = `<span>â³ Scanning Batch Emails...</span>`;
+        btnRunBatch.innerHTML = `<span>Scanning Batch Emails...</span>`;
     }
 
     try {
@@ -434,7 +593,7 @@ async function runBatchAnalysis(csvContent) {
     } finally {
         if (btnRunBatch) {
             btnRunBatch.disabled = false;
-            btnRunBatch.innerHTML = `<span>ðŸš€ Run Bulk Batch Review</span>`;
+            btnRunBatch.innerHTML = `<span>Run Bulk Batch Review</span>`;
         }
     }
 }
@@ -476,7 +635,9 @@ function renderBatchResults(data) {
     container.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+// =============================================================================
 // Utility: HTML Escaping
+// =============================================================================
 function escapeHtml(text) {
     if (!text) return "";
     const map = {
