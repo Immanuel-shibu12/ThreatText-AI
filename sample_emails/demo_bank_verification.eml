@@ -1,0 +1,22 @@
+Subject: URGENT: Temporary Suspension on Online Banking Access
+From: Chase Security Alerts <service-notice@chase-secure-verify.net>
+To: customer@gmail.com
+Date: Mon, 26 Oct 2026 09:14:22 -0500
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Dear Valued Customer,
+
+We have detected multiple unauthorized login attempts to your Chase online banking portal from an unrecognized IP address (194.26.29.112). 
+
+For your security, access to your funds and bill payment features has been temporarily suspended. 
+
+To restore your access immediately and avoid permanent account lock within 24 hours, you must verify your identity and confirm your account password using our secure verification server:
+
+http://chase-identity-auth-portal.com/login?verify=true&session=89327498234
+
+Failure to verify within 24 hours will result in permanent suspension and a $50 administrative reactivation fee.
+
+Sincerely,
+Chase Customer Protection & Fraud Operations Department

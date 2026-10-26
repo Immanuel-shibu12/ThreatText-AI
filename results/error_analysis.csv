@@ -1,0 +1,142 @@
+Test_Index,Actual_Label,Predicted_Label,Phishing_Probability,Error_Type,Email_Snippet
+76,Legitimate,Phishing,0.598,False Positive (Legitimate classified as Phishing),"dear mr . kaminski , it was really a pleasure to meet you during the risk event . i hope we ' ll have more chances to talk in the future . i will be glad to invite you when you will visit california . my home number is ( 408 ) - 996 - 2631 . sincerely , alex ulitsky . = = = = = = = = = = = = = = = ="
+86,Phishing,Legitimate,0.2488,False Negative (Phishing classified as Legitimate),Industrial LINUX News: The June issue of the ISA's InTech Magazine has an interesting article on how truly open Linux applications can lower development cost and increase the performance and reliability of industrial automation. A copy of the the article can be found at:  http://www.sixnet-io.com/ht
+124,Phishing,Legitimate,0.3342,False Negative (Phishing classified as Legitimate),phamacy online hangable pine smolder discrete % q news ; blogs ; white papers ; downloads ; reviews ; prices . go . alerts | ; newsletters | ; rss feeds . click here . enterprise news . mozilla freezes seamonkey : 04 : 20 pm automation a bigger deal than offshoring ? 03 : 33 pm . time to kill it for
+133,Phishing,Legitimate,0.3402,False Negative (Phishing classified as Legitimate),"why i love unverifiable voting machines , by the prez . how i stole your election by george w . bush the first thing i did to steal your election was to make friends with all the manufacturers and code - verifyers of the electronic voting machines . they were really nice , especially diebold who gav"
+164,Legitimate,Phishing,0.5295,False Positive (Legitimate classified as Phishing),"this just struck me as odd, but interesting in a way i guess.http://www.lifegem.com/index.htm
+What is a LifeGem?A LifeGem is a certified, high quality diamond created from the carbon of 
+your loved one as a memorial to their unique and wonderful life.
+Chris
+http://xent.com/mailman/listinfo/fork"
+250,Legitimate,Phishing,0.6835,False Positive (Legitimate classified as Phishing),"a message from jim jim has visited msn womencentral at http : / / womencentral . msn . com and has asked us to send this message to you so you can check out the following page : maximizing your child ' s brainpower . family advice on womencentral to jump to the page , open your web browser and copy "
+260,Phishing,Legitimate,0.1019,False Negative (Phishing classified as Legitimate),"ç¨¿ä»¶ï¼šé‡Žè›®å¥³å‹VSã€Šé­”é¬¼è‹±è¯­ã€‹
+â€101æ•™è‚²ç½‘â€œæŽ¨èã€Šé­”é¬¼è‹±è¯­ã€‹
+â€ä¸­å›½æ•™è‚²ç½‘â€œæŽ¨èã€Šé­”é¬¼è‹±è¯­ã€‹ 
+ç¨¿ä»¶ï¼šå¦‚ä½•é—ª(FLASH)çš„æ›´é…·ä¸€ç‚¹
+ç¨¿ä»¶ï¼šé‡Žè›®å¥³å‹å–œæ¬¢ä¸­å›½é…·å“¥
+ç¨¿ä»¶ï¼šé‡Žè›®å¥³å‹å–œæ¬¢éº»è¾£é…·å“¥
+ç¨¿ä»¶ï¼šeæ—¶ä»£ï¼Œé—ªå®¢ä¸æ•Œé…·å®¢
+ç¨¿ä»¶ï¼š"
+317,Legitimate,Phishing,0.7001,False Positive (Legitimate classified as Phishing),"bonds the difference is $ 4 , 391 . you can send more if you would like to add to the tax - free money fund . thank you keith hazlewood edward jones p . o . box 9479 the woodlands , tx 77387"
+429,Legitimate,Phishing,0.632,False Positive (Legitimate classified as Phishing),skilling ranked # 2 in the top ceo list - following steve ballmer http : / / www . worth . com / magazine / index . html
+432,Legitimate,Phishing,0.9731,False Positive (Legitimate classified as Phishing),"You are receiving this email because you signed up to 
+receive one of our free reports. If you would prefer 
+not to receive messages of this type, please 
+unsubscribe by following the instructions at the 
+bottom of this message.
+Dear Investor,Thank you again for requesting our free special 
+report, "
+457,Legitimate,Phishing,0.7854,False Positive (Legitimate classified as Phishing),noram offshore rig the sale of the rig closed and funded . we received our net $ 4 . 4 million .
+542,Phishing,Legitimate,0.4418,False Negative (Phishing classified as Legitimate),"don ' t be her 2 choice be the first become a tiger in bed , c % ome lnside . today only v | @ gra cialls ! thanks avis beaver to _ take _ 0 ff :"
+591,Legitimate,Phishing,0.5087,False Positive (Legitimate classified as Phishing),re : business plans i have not seen any numbers nor have i heard from faith . - - - - - - - - - - - - - - - - - - - - - - - - - - sent from my blackberry wireless handheld ( www . blackberry . net )
+627,Phishing,Legitimate,0.4223,False Negative (Phishing classified as Legitimate),"HTML>
+Â Â Â Â Â Â Â Â Â Â Â Â      
+Ä°NTERNETTE KENDÄ°NÄ°ZÄ° DAHA Ä°YÄ° HÄ°SSEDECEKSÄ°NÄ°Z.
+	  Ä°NGÄ°LÄ°ZCE WEB SAYFALARININ TÃœRKÃ‡E'YE Ã‡EVÄ°RÄ° YAZILIMI
+	    $ 39+KDV 
+ Ä°NGÄ°LÄ°ZCE'DEN TÃœRKÃ‡E'YE BÄ°LGÄ°SAYAR DESTEKLÄ°
+	    METÄ°N Ã‡EVÄ°RÄ° YAZILIMI  
+	 
+	 (MS-WORD ALTINDA KULLANIM, TÃœM WINDOW"
+653,Phishing,Legitimate,0.3482,False Negative (Phishing classified as Legitimate),"! ebay reguiar verification % words % words % words % words dle ! a ; rcuelbiaiyyou : s , e : r , % words % words % words % words % words % words regards , e : bla : y % words % words % words % words % words % words % words % words % words % words % words"
+763,Legitimate,Phishing,0.5737,False Positive (Legitimate classified as Phishing),"tw pnr activity for dec . lst - 19 th a quick snapshot of where we are for the month , as of dec 19 th buyer po # poi dekatherm rate / dth rate _ type daily / total invoice amount pnm 27267 500617 15 , 000 $ 0 . 0900 $ 0 . 0900 total $ 1 , 350 . 00 virginia power 27719 500623 14 , 514 $ 0 . 0500 $ 0"
+854,Phishing,Legitimate,0.2915,False Negative (Phishing classified as Legitimate),"YOU HAVE NEVER SEEN A DILDO SITE LIKE THIS ONE!!
+Extreme never seen before pictures and content
+http://www.supremewebhosting-online.com/users/k/katrina/Join in the fun as the girls REAM in objects like never before
+http://www.supremewebhosting-online.com/users/k/katrina/
+This is NOT SPAM - You have "
+879,Legitimate,Phishing,0.7989,False Positive (Legitimate classified as Phishing),"============================================================
+Sponsor a child today through Children International.  Give
+a desperately poor child hope for a brighter future.  For
+only $15 a month you can make a difference!
+http://click.topica.com/caaavgIb1dcmWb2yXQNa/ChildrenInternational
+=========="
+898,Legitimate,Phishing,0.8118,False Positive (Legitimate classified as Phishing),"cdnow order confirmation dear daren , thank you for shopping at cdnow . this email is to confirm your order number 30320418 . to check the status of this order or to make any changes , click or copy / paste this link into your web browser : http : / / cdnow . com / myorder / otid = 30320418 you can "
+948,Phishing,Legitimate,0.4744,False Negative (Phishing classified as Legitimate),"software for system builders , resellers , and hardware purchasers only . get latest softwares , 99 % savings . the two most abundant things in the universe are hydrogen and stupidity . i know nothing except the fact of my ignorance ."
+949,Phishing,Legitimate,0.4806,False Negative (Phishing classified as Legitimate),your tests on the 11 th unsubscribe onrushing passwordenvelop dictate glycerinatedebtor bullhide sundowntransition zest carletoncutback garrison tysonkenya upstate chubrogue semper trademarkarum lifeguard bronchieddie somerset clinchhereinbelow
+966,Phishing,Legitimate,0.4147,False Negative (Phishing classified as Legitimate),"Hello. I meant to contact http://taint.org webmaster,
+Am I correct, I hope?Actually, I am not quite sure... Did I or Natasha Fedorova write 
+you before to your other address? Anyway, now I am here instead of 
+her too.So, my name is Oksana Svetlova, I live in St. Petersburg, Russia.I have an idea, ho"
+1020,Phishing,Legitimate,0.3947,False Negative (Phishing classified as Legitimate),"the situation is right under your own control perfumery so they go back to her place and have great . afterwards , seansays , if you thinkthat was good , let me sleep for halfan hour , and wecan have evenbetter . butwhile i ' m sleeping , holdmyballsinyour lefthandandmydick in your right hand . kyli"
+1108,Legitimate,Phishing,0.5588,False Positive (Legitimate classified as Phishing),"coling-acl ' 98 , last call for participation coling-acl ' 98 last call for participation - - - - - - - - - - - - - - - - - - - - - - - - - - - avoid the line-ups and hassle of on-site registration ! pre - register for coling-acl ' 98 before you come to montreal via the online registration form avai"
+1121,Phishing,Legitimate,0.3412,False Negative (Phishing classified as Legitimate),"-----------------------------------------------------------  
+ 
+http://www.webheadsweekly.com/babes-shaved/karsten/babes.html  
+ 
+-----------------------------------------------------------Shaved Sweeties-----------------------------------------------------------
+http://www.webheadsweekly.com/take-m"
+1320,Phishing,Legitimate,0.2371,False Negative (Phishing classified as Legitimate),"Could you please send the address of your agent in Saudi Arabia.Thanks
+Sathar"
+1505,Phishing,Legitimate,0.4356,False Negative (Phishing classified as Legitimate),"sometimes your life experiences are better than a post graduate education you deserve a univ - ersity dip - loma do you feel you should have got a universi ' y de ' gree ? get your masters now no extra work the name of "" chimpanzee , "" by which one of the african apes is now so well known , appears "
+1519,Legitimate,Phishing,0.9219,False Positive (Legitimate classified as Phishing),"For almost a year, we've been working on a new effort that we're
+finally ready to show you. We're proud to introduce our new Apparel
+and Accessories store with over 400 major clothing brands (including
+Gap, Old Navy, Nordstrom, Lands' End, Target, Eddie Bauer, Foot
+Locker, and many more).Our goal is"
+1562,Legitimate,Phishing,0.7242,False Positive (Legitimate classified as Phishing),"please approve : application request ( wsmh - 4 esnva ) security resource request wsmh - 4 esnva has been submitted for your approval . to view the request , double click your left mouse button on the notes document link below . quick steps to approve or reject request form : 1 . click the button to"
+1719,Legitimate,Phishing,0.5549,False Positive (Legitimate classified as Phishing),"It's official, the holidays are here.  I got HTML mail from one of the 
+little catalogs I've been known to purchase from....basically the front 
+page of their first holiday catalog. Must have been released simultaneously with mailing for a delivery target 
+of just after Labor Day.Ick.Eirikur"
+1722,Phishing,Legitimate,0.4697,False Negative (Phishing classified as Legitimate),"re : our offer i liked him , and he returned the liking well no msg during some lulls of the wind and sea , i fancied i heard several times vague sounds , a sort of fugitive harmony produced by words of command ; and , indeed , unless this shoal had a machine in its stomach , how could it change its"
+1803,Legitimate,Phishing,0.6399,False Positive (Legitimate classified as Phishing),can you work you legalies into this form .
+1808,Phishing,Legitimate,0.291,False Negative (Phishing classified as Legitimate),"let ' s get this settled hey , what ' s up . here ' s the link that you requested . i hope it ' s what you needed . gotta run for now , i ' ll be back on monday , let me know if it helps . catch you later . complete your order here ."
+1853,Legitimate,Phishing,0.516,False Positive (Legitimate classified as Phishing),"The Scotsman - 22 August 2002 Playboy wants to go out with a bang 
+ 
+ 
+ AN AGEING Berlin playboy has come up with an unusual offer to lure women into
+ his bed - by promising the last woman he sleeps with an inheritance of 250,000
+ (Â£160,000). 
+ 
+ Rolf Eden, 72, a Berlin disco owner famous for his c"
+1854,Legitimate,Phishing,0.6683,False Positive (Legitimate classified as Phishing),"____________________________________________________________ T H E . M O U T H P I E C E  Monday, August 19th, 2002 
+____________________________________________________________ 
+Do you enjoy this publication? Then give your friends a FREE 
+GIFT SUBSCRIPTION to it today. Just click below and 
+""Shag-"
+2023,Phishing,Legitimate,0.387,False Negative (Phishing classified as Legitimate),"Below is the result of your feedback form.  It was submitted by
+ (reenspring@happyman.com) on Thursday, August 8, 2002 at 08:36:27
+---------------------------------------------------------------------------message: - - - - - FREE FREE FREE! - - - - - Thats right free unlimited web cam feeds! - chat!"
+2167,Phishing,Legitimate,0.3062,False Negative (Phishing classified as Legitimate),junk mail : books for linguists plurabelle books has a new catalogue of second hand and out of print books in linguistics and history of linguistics available . it contains 250 titles . please ask for your free copy of the catalogue ( please include your mailing address if you want a paper copy ) or
+2179,Legitimate,Phishing,0.5304,False Positive (Legitimate classified as Phishing),warning re : colin good was originally passed to me from you . is a time - waster and is threatening to call you again . see me if you want details . dave
+2210,Phishing,Legitimate,0.2909,False Negative (Phishing classified as Legitimate),"Below is the result of your feedback form.  It was submitted by  (spock@1andonly.com) on Sunday, July 28, 19102 at 15:37:19
+---------------------------------------------------------------------------message: Free Cell phone with any Plan! We have all the latest Phones for FREE!!!! Please click the l"
+2292,Legitimate,Phishing,0.6041,False Positive (Legitimate classified as Phishing),timesheets hello everyone : well it is almost that time again ! i am going to try something different . i am forwarding you the time sheet by email . save the document to whatever drive you want to and then fill out any off duty time or overtime that you had and return to me by email . i will need t
+2324,Legitimate,Phishing,0.6815,False Positive (Legitimate classified as Phishing),department of energy is deploying a corporate portal at facilitie s across the country star information technology brings has the tools needed to help energy companies gain knowledge . if it ' s information from oasis to market prices . the events that change prices such as weather and more are alwa
+2330,Phishing,Legitimate,0.2936,False Negative (Phishing classified as Legitimate),"industry forum # 136 the industry forum minute man ii 160 lbs . light - requires no electricity - under $ 6000 complete ! now everybody can be a foamer ! small , one time project ? froth - pak is the answer ! smallest self - contained out - of - box foam application for repairs and small jobs ! also"
+2380,Phishing,Legitimate,0.2734,False Negative (Phishing classified as Legitimate),agriculture - translation service technical translation - agriculture english / spanish - spanish / english - crops - cattle raising - swine - poultry - farm machinery - agricultural inputs - veterinary medicine - farm management - agricultural economics - commodity commercialization - rural policy 
+2396,Legitimate,Phishing,0.5435,False Positive (Legitimate classified as Phishing),"the desk - - free sample issue we welcome you to download a free trial issue of the desk , the industry ' s leading weekly on power trading , risk management and market intelligence . and through a special arrangement with the publisher , you can subscribe to a full year of the desk for only $ 449 -"
+2432,Legitimate,Phishing,0.5242,False Positive (Legitimate classified as Phishing),"re : boat i checked the boat and it is 17 ft , 7 in . long , it is a capri model # 1750 ch , it has a am / fm cass . the motor is 3 . 0 l mercruiser alpha sterndrive ( 135 hp )"
+2491,Legitimate,Phishing,0.516,False Positive (Legitimate classified as Phishing),"ut accept / decline dear ut team , good news and bad . . . . i just received notice that melanie sandoval will be declining our offer . although we offered more money , he has chosen to accept with neiman marcus in dallas . however , ali ahmed will be accepting our offer ! he is expected to start on"
+2552,Legitimate,Phishing,0.5583,False Positive (Legitimate classified as Phishing),"path 30 mitigation system notification : at 0115 pst , wacm terminated request for coordinated operation controllable devices for path 30 usf mitigation ."
+2562,Legitimate,Phishing,0.6713,False Positive (Legitimate classified as Phishing),"london visit hi maureen how many days are you coming over for ? in addition to the couple of days you ' ll be spending at brook hunt , i can see one further day with our metals people , and one extra day with rodrigo ( from rac ) looking at our inflation model . do you have 4 + days ? all the best s"
+2650,Phishing,Legitimate,0.2692,False Negative (Phishing classified as Legitimate),via - ggra is lousy mizar anti curb hemisphere % q news ; blogs ; white papers ; downloads ; reviews ; prices . go . alerts | ; newsletters | ; rss feeds . click here . enterprise news . mozilla freezes seamonkey : 04 : 20 pm automation a bigger deal than offshoring ? 03 : 33 pm . time to kill it fo
+2655,Legitimate,Phishing,0.913,False Positive (Legitimate classified as Phishing),"You are receiving this email because you signed up to 
+receive one of our free reports. If you would prefer 
+not to receive messages of this type, please 
+unsubscribe by following the instructions at the 
+bottom of this message.Dear Fool,Just before Enron plunged......16 of 17 Wall Street analysts w"
+2703,Legitimate,Phishing,0.5083,False Positive (Legitimate classified as Phishing),"g . j . ramstedt , biography memoires de la societe finno - ougrienne vol . 229 : biliktu bakshi . the knowledgeable teacher . g . j . ramstedt 's career as a scholar , by harry halen . viii + 371 + 16 p . + 1 map . isbn 952-5150 - 16 - x ( pb . ) , 952-5150 - 17 - 8 ( hb . ) . gustaf john ramstedt "
+2717,Legitimate,Phishing,0.5208,False Positive (Legitimate classified as Phishing),"Hallo Xxxxxxxxx Yyyyyyy,HEUTE, 03. Juli, ist monatlicher Messetag der virtuellen 3D-Job-Messe!!
+Ihre Chance, die Weichen fuer einen erfolgreichen Berufsein- und
+Karriereaufstieg zu stellen.
+Zwischen 13 und 18 Uhr erwarten Sie HEUTE die Personalmanager zahlreicher
+Unternehmen, die Stellen fuer engagi"
+2725,Phishing,Legitimate,0.4784,False Negative (Phishing classified as Legitimate),"commercial adroit bacilli decry less than two hours later , two veiled women - - reportedly the man ' s sister and fiancee - - attacked a tour bus . egyptian police officials and the government - guided al - ahram newspaper said the bus was carrying israeli tourists . after firing on the tour bus , "
+2772,Phishing,Legitimate,0.2888,False Negative (Phishing classified as Legitimate),nymex invitation - learn power trading power trading fundamentals : sept 15 - 16 nymex in nyc early bird discount now in effect ! nymex power delegates will learn : electricity markets overview simulated trading exercise market factors basic trading tools new york mercantile exchange financial instr
+2787,Legitimate,Phishing,0.6461,False Positive (Legitimate classified as Phishing),"LIFETIME MOVIE NEWSLETTERThis Week's Movies to Watch on Lifetime[ http://www.lifetimetv.com/movies/index.html ]August 19, 2002*************************************************************************COMING AT YOU THIS WEEK...1) ""THE SECRET LIFE OF ZOEY"" PREMIERE!
+2) THE BUZZ ABOUT THE UPCOMING MOVIE"
+2803,Phishing,Legitimate,0.3395,False Negative (Phishing classified as Legitimate),we ' ve found a school for you !
+3034,Legitimate,Phishing,0.5384,False Positive (Legitimate classified as Phishing),journees de linguistique dernier appel de communication les xiiies journees de linguistique ( jdl ) se tiendront les 25 et 26 mars 1999 au pavillon alphonse - desjardins de l ' universite laval . les jdl est l ' un des colloques etudiants les plus importants en linguistique . les jdl permettent aux 
+3064,Phishing,Legitimate,0.4007,False Negative (Phishing classified as Legitimate),re : lvoely bitch swapping seemn do you mind ? : ) ) ) k ' an ben sini
+3068,Phishing,Legitimate,0.3174,False Negative (Phishing classified as Legitimate),"i think , yes . the things we sell are known over the world ! our goods for guys are in requisition !"
+3073,Legitimate,Phishing,0.5488,False Positive (Legitimate classified as Phishing),"mongolian programs dear netters , i am looking for american universities which offer couses in mongolian . any information would be appreciated . thanks for your help . please e-mail me at blanch @ iname . com . duane l . blanchard"
+3124,Phishing,Legitimate,0.4753,False Negative (Phishing classified as Legitimate),"Dear Candidate,We recently came across a posting of your resume on the Internet.   After our 
+research, we determined that it was not posted on over 45 other top job sites. 
+The impact to you is that over 83% of the employers and recruiters looking to 
+hire candidates with your skills are not readin"
+3321,Phishing,Legitimate,0.4694,False Negative (Phishing classified as Legitimate),"Wanna see sexually curious teens playing with each other on webcam?http://www.yourtastybaby.net  <----- our webcam link=)me and my dorm mate are eating each other out as we speak!see you soon baby,
+-Tiffanykludlkaiplcqcnnaigaybaxhesrhltsp"
+3339,Legitimate,Phishing,0.5621,False Positive (Legitimate classified as Phishing),"are we doing atm rings for sempra and kinder ? or others ? presto said he ' s refusing to do it in power for anybody . any advice , cause the phone is ringing off the hook to do them ."
+3474,Phishing,Legitimate,0.4393,False Negative (Phishing classified as Legitimate),"we care , no lines ! no hassle ! or embarrassment !"

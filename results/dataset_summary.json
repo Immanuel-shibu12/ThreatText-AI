@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "file_path": "C:\\Users\\imman\\OneDrive\\Desktop\\ThreatText-AI\\data\\emails.csv",
+  "total_records": 17512,
+  "legitimate_count": 10976,
+  "phishing_count": 6536,
+  "legitimate_percentage": 62.68,
+  "phishing_percentage": 37.32,
+  "missing_text_count": 0,
+  "missing_label_count": 0,
+  "duplicate_records_found": 0,
+  "average_email_length_chars": 2864.7,
+  "median_email_length_chars": 916,
+  "sources": [
+    {
+      "name": "Enron Email Dataset",
+      "role": "Legitimate benchmark correspondence",
+      "description": "Authentic organizational communications from senior corporate staff."
+    },
+    {
+      "name": "Nazario Phishing Corpus",
+      "role": "Real-world phishing attacks",
+      "description": "Historical collection of targeted phishing campaigns, credential harvesters, and financial scams."
+    },
+    {
+      "name": "SpamAssassin Public Corpus",
+      "role": "Curated spam and ham emails",
+      "description": "Vetted benchmark corpus maintained by Apache Software Foundation."
+    }
+  ],
+  "limitations": [
+    "Historical email distribution; emerging zero-day LLM-generated phishing techniques require continuous retuning.",
+    "Textual analysis excludes external URL redirection chains and DNS reputation lookups.",
+    "Attribution is model-based linear approximation and should be used as assistive triage rather than a sole security verdict."
+  ]
+}

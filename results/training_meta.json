@@ -1,0 +1,10 @@
+{
+  "total_samples": 17512,
+  "legitimate_samples": 10976,
+  "phishing_samples": 6536,
+  "train_samples": 14009,
+  "test_samples": 3503,
+  "vocabulary_size": 8000,
+  "selected_model": "Logistic Regression",
+  "training_timestamp": "2026-10-26 19:32:22"
+}

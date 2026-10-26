@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThreatText AI — Phishing Email Scanner & Explainable Review</title>
+    <meta name="description" content="Explainable NLP Phishing Detection System. Enter any email text to get an instant security verdict, risk score, and explainable word review.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="brand-wrapper">
+            <div class="brand-icon">🛡️</div>
+            <div>
+                <h1 class="brand-title">ThreatText AI</h1>
+                <p class="brand-subtitle">Explainable NLP Phishing Scanner & Review</p>
+            </div>
+        </div>
+
+        <nav>
+            <div class="scan-mode-toggle">
+                <button class="mode-btn active" id="btn-mode-single" data-mode="single">✉️ Email Scanner</button>
+                <button class="mode-btn" id="btn-mode-batch" data-mode="batch">📁 Batch CSV Scanner</button>
+            </div>
+        </nav>
+
+        <div class="server-status-pill" id="server-status-pill">
+            <span class="status-dot"></span> ML Model Ready (98.17% Acc)
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-container">
+
+        <!-- ============================================================
+             MODE 1: SINGLE EMAIL SCANNER & REVIEW
+             ============================================================ -->
+        <section id="section-single" class="scanner-section active">
+            
+            <!-- Quick Demo Benchmarks -->
+            <div class="quick-presets-bar">
+                <span class="presets-label">⚡ 1-Click Test Scenarios:</span>
+                <div class="presets-container" id="presets-container">
+                    <!-- Populated dynamically by JS -->
+                </div>
+            </div>
+
+            <!-- Scanner Input Box -->
+            <div class="card scanner-card">
+                <div class="form-group">
+                    <label class="form-label" for="email-subject">Email Subject (Optional)</label>
+                    <input type="text" id="email-subject" class="form-control" placeholder="e.g. URGENT: Verify your account password immediately">
+                </div>
+
+                <div class="form-group">
+                    <div class="body-label-row">
+                        <label class="form-label" for="email-body">Email Body / Message Text</label>
+                        <label class="file-upload-label" for="email-file-input">
+                            📎 Upload .eml / .txt file
+                            <input type="file" id="email-file-input" accept=".eml,.txt" style="display: none;">
+                        </label>
+                    </div>
+                    <textarea id="email-body" class="form-control" rows="8" placeholder="Paste full email text here, or click one of the quick test scenarios above..."></textarea>
+                </div>
+
+                <div class="action-buttons-row">
+                    <button class="btn btn-primary btn-lg" id="btn-analyze">
+                        <span>🔍 Scan Email & Generate Review</span>
+                    </button>
+                    <button class="btn btn-secondary" id="btn-clear">
+                        <span>🧹 Clear</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Review / Result Section (Appears after scanning) -->
+            <div id="analysis-result-container" class="results-area" style="display: none;">
+                
+                <!-- Verdict Banner -->
+                <div class="threat-banner" id="threat-banner">
+                    <div class="verdict-info">
+                        <div class="verdict-badge" id="verdict-badge">CRITICAL THREAT</div>
+                        <div>
+                            <div class="verdict-sublabel">Threat Classification Verdict</div>
+                            <div class="verdict-title" id="threat-summary-text">Deceptive Phishing Attempt Detected</div>
+                        </div>
+                    </div>
+                    <div class="risk-meter-wrapper">
+                        <div class="risk-meter-label">Phishing Confidence Risk</div>
+                        <div class="risk-percent" id="risk-score-value">89.4%</div>
+                        <div class="risk-progress-bar">
+                            <div class="risk-progress-fill" id="risk-progress-fill" style="width: 89.4%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Explainable Review Cards -->
+                <div class="card review-card">
+                    <div class="card-header">
+                        <h3 class="card-title">💡 Explainable AI Review: Highlighted Threat Words</h3>
+                        <div class="xai-legend">
+                            <span class="legend-item"><span class="legend-color phish"></span> Red = Phishing Trigger</span>
+                            <span class="legend-item"><span class="legend-color legit"></span> Green = Safe Anchor</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Highlighted Text -->
+                    <div class="xai-email-box" id="xai-highlighted-content">
+                        <!-- Populated by JS -->
+                    </div>
+
+                    <!-- Influential Words Breakdown -->
+                    <div class="tokens-grid">
+                        <div class="token-column">
+                            <h4 class="token-col-title phish">⚠️ Phishing Red Flags Detected (+Weight)</h4>
+                            <div class="token-list" id="top-phishing-tokens">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                        <div class="token-column">
+                            <h4 class="token-col-title legit">🛡️ Legitimate Words (-Weight)</h4>
+                            <div class="token-list" id="top-legitimate-tokens">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actionable Recommendations & Warning -->
+                <div class="card advice-card">
+                    <div class="card-header">
+                        <h3 class="card-title">🛡️ Security Advice & Recommended Actions</h3>
+                    </div>
+                    <ul id="recommendations-list" class="recs-list">
+                        <!-- Populated by JS -->
+                    </ul>
+
+                    <div class="security-disclaimer" id="threat-disclaimer">
+                        Security Notice: ThreatText AI provides probabilistic NLP feature attribution for triage assistance. Predictions must not be treated as definitive cryptographic or security verdicts. Always inspect email sender origins and verification protocols.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================================
+             MODE 2: BATCH CSV SCANNER
+             ============================================================ -->
+        <section id="section-batch" class="scanner-section" style="display: none;">
+            <div class="card scanner-card">
+                <div class="batch-header-row">
+                    <div>
+                        <h2 class="section-title">Bulk CSV Email Scanner</h2>
+                        <p class="section-desc">Upload a CSV file containing multiple emails to screen them in bulk and export predictions.</p>
+                    </div>
+                    <button class="btn btn-secondary btn-sm" id="btn-load-sample-batch">
+                        <span>📋 Load Sample Batch (10 Emails)</span>
+                    </button>
+                </div>
+
+                <!-- Dropzone -->
+                <div class="drop-zone" id="batch-drop-zone">
+                    <div class="drop-icon">📊</div>
+                    <div class="drop-main-text">Drag & drop your <code>.csv</code> file here</div>
+                    <div class="drop-sub-text">or click to browse local files</div>
+                    <input type="file" id="batch-file-input" accept=".csv" style="display: none;">
+                </div>
+
+                <div class="form-group" style="margin-top: 1rem;">
+                    <label class="form-label" for="batch-csv-textarea">CSV Content</label>
+                    <textarea id="batch-csv-textarea" class="form-control" rows="5" placeholder="CSV content will appear here..."></textarea>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; margin-top: 1rem;">
+                    <button class="btn btn-primary btn-lg" id="btn-run-batch">
+                        <span>🚀 Run Bulk Batch Review</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Batch Results -->
+            <div id="batch-results-container" class="results-area" style="display: none;">
+                
+                <!-- KPI mini stats -->
+                <div class="card-grid-4">
+                    <div class="stat-card">
+                        <div class="stat-icon blue">🔢</div>
+                        <div>
+                            <div class="stat-label">Total Analyzed</div>
+                            <div class="stat-value" id="batch-stat-total">0</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon amber">⚠️</div>
+                        <div>
+                            <div class="stat-label">Phishing Flagged</div>
+                            <div class="stat-value" id="batch-stat-phish">0 (0%)</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green">🛡️</div>
+                        <div>
+                            <div class="stat-label">Legitimate Clean</div>
+                            <div class="stat-value" id="batch-stat-legit">0</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon purple">📑</div>
+                        <div>
+                            <div class="stat-label">Text Column</div>
+                            <div class="stat-value text-column-name" id="batch-text-col">text</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Batch Table -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">📋 Batch Email Predictions</h3>
+                        <button class="btn btn-primary btn-sm" id="btn-download-batch-csv">
+                            <span>⬇️ Download Enriched CSV</span>
+                        </button>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 50px;">#</th>
+                                    <th>Email Snippet</th>
+                                    <th style="width: 140px;">Verdict</th>
+                                    <th style="width: 110px;">Risk Score</th>
+                                    <th style="width: 170px;">Threat Level</th>
+                                </tr>
+                            </thead>
+                            <tbody id="batch-table-body">
+                                <!-- Populated by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Clean Minimal Footer -->
+    <footer class="footer">
+        <p><strong>ThreatText AI</strong> &bull; Explainable NLP Phishing Detection System</p>
+        <p class="footer-sub">All dataset benchmarks (17,512 emails), models, and technical reports are preserved in the backend directory for faculty review.</p>
+    </footer>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
