@@ -101,33 +101,27 @@ function initWelcomeRobo() {
     const speechHeadline = document.getElementById("speech-headline");
     const speechBody = document.getElementById("speech-body-text");
 
-    function triggerAlitWave() {
+    function triggerRoboWave() {
         if (wavingArm) {
             wavingArm.classList.add("waving-active");
             wavingArm.style.animation = "none";
             void wavingArm.offsetWidth;
             wavingArm.style.animation = "waveArmGestureFast 0.7s ease-in-out 4";
         }
-        if (speechHeadline) {
-            speechHeadline.textContent = "ALIT says Hi!";
-        }
         setTimeout(() => {
             if (wavingArm) {
                 wavingArm.classList.remove("waving-active");
                 wavingArm.style.animation = "";
             }
-            if (speechHeadline) {
-                speechHeadline.textContent = "Welcome";
-            }
         }, 2800);
     }
 
     if (btnWave) {
-        btnWave.addEventListener("click", triggerAlitWave);
+        btnWave.addEventListener("click", triggerRoboWave);
     }
 
     if (robotFigure) {
-        robotFigure.addEventListener("click", triggerAlitWave);
+        robotFigure.addEventListener("click", triggerRoboWave);
     }
 
     if (btnWink && eyeLeft) {
