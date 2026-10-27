@@ -150,7 +150,17 @@ class ThreatTextHTTPHandler(BaseHTTPRequestHandler):
 
     def log_message(self, format, *args):
         # Clean terminal logging format
-        sys.stderr.write(f"[{time.strftime('%H:%M:%S')}] {args[0]} - {args[1]} {args[2]}\n")
+        try:
+            if len(args) >= 3:
+                sys.stderr.write(f"[{time.strftime('%H:%M:%S')}] {args[0]} - {args[1]} {args[2]}\n")
+            elif len(args) == 2:
+                sys.stderr.write(f"[{time.strftime('%H:%M:%S')}] {args[0]} - {args[1]}\n")
+            elif len(args) == 1:
+                sys.stderr.write(f"[{time.strftime('%H:%M:%S')}] {args[0]}\n")
+            else:
+                sys.stderr.write(f"[{time.strftime('%H:%M:%S')}] {format}\n")
+        except Exception:
+            pass
 
     def _set_headers(self, status_code: int = 200, content_type: str = "application/json"):
         self.send_response(status_code)
